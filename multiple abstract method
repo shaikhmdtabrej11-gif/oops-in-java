@@ -1,0 +1,33 @@
+abstract class Student {
+
+    abstract void study();
+
+    abstract void exam();
+
+    void college() {
+        System.out.println("Student goes to college");
+    }
+}
+
+class EngineeringStudent extends Student {
+
+    void study() {
+        System.out.println("Student studies Java");
+    }
+
+    void exam() {
+        System.out.println("Student gives exam");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new EngineeringStudent();
+
+        s.college();
+        s.study();
+        s.exam();
+    }
+}
