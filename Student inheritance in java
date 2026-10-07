@@ -1,0 +1,24 @@
+class Person {
+    String name = "Tabrej";
+
+    void showName() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Student extends Person {
+    int rollNo = 101;
+
+    void showRollNo() {
+        System.out.println("Roll No: " + rollNo);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.showName();
+        s.showRollNo();
+    }
+}
