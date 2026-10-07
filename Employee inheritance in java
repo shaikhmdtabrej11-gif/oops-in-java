@@ -1,0 +1,24 @@
+class Person {
+    String name = "Tabrej";
+
+    void displayName() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Employee extends Person {
+    double salary = 50000;
+
+    void displaySalary() {
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+
+        e.displayName();
+        e.displaySalary();
+    }
+}
