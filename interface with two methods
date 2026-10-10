@@ -1,0 +1,25 @@
+interface Calculator {
+    void add();
+    void subtract();
+}
+
+class MyCalculator implements Calculator {
+    public void add() {
+        int a = 10, b = 5;
+        System.out.println("Addition = " + (a + b));
+    }
+
+    public void subtract() {
+        int a = 10, b = 5;
+        System.out.println("Subtraction = " + (a - b));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyCalculator c = new MyCalculator();
+
+        c.add();
+        c.subtract();
+    }
+}
