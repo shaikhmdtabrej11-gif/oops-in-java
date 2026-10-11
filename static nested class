@@ -1,0 +1,33 @@
+class Student {
+    String name = "Tabrej";
+    int age = 20;
+
+    class Details {
+        void show() {
+            System.out.println("Name: " + name);
+            System.out.println("Age: " + age);
+        }
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        Student.Details d = s.new Details();
+
+        d.show();
+    }
+}
+class University {
+    static String universityName = "AKTU";
+    String studentName = "Tabrej";
+
+    static class Student {
+        void display() {
+            System.out.println(universityName);
+        }
+    }
+
+    public static void main(String[] args) {
+        University.Student s = new University.Student();
+        s.display();
+    }
+}
