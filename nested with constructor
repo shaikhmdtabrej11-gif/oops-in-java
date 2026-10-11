@@ -1,0 +1,37 @@
+interface Animal {
+    void sound();
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal a = new Animal() {
+            public void sound() {
+                System.out.println("Dog barks");
+            }
+        };
+
+        a.sound();
+    }
+}
+class Car {
+    Car() {
+        System.out.println("Car constructor");
+    }
+
+    class Engine {
+        Engine() {
+            System.out.println("Engine constructor");
+        }
+
+        void start() {
+            System.out.println("Engine started");
+        }
+    }
+
+    public static void main(String[] args) {
+        Car c = new Car();
+        Car.Engine e = c.new Engine();
+
+        e.start();
+    }
+}
