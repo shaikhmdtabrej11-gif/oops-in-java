@@ -1,0 +1,33 @@
+class Outer {
+
+    static int number = 100;
+    int value = 200;
+
+    static class Inner {
+
+        void display() {
+            System.out.println(number);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Outer.Inner obj = new Outer.Inner();
+
+        obj.display();
+    }
+}
+class Outer {
+    class Inner {
+        void display() {
+            System.out.println("This is Inner class");
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+        Outer.Inner in = obj.new Inner();
+
+        in.display();
+    }
+}
