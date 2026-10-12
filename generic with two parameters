@@ -1,0 +1,23 @@
+class Student<K, V> {
+    K rollNumber;
+    V name;
+
+    Student(K rollNumber, V name) {
+        this.rollNumber = rollNumber;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Roll: " + rollNumber);
+        System.out.println("Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student<Integer, String> s =
+                new Student<>(101, "Tabrej");
+
+        s.display();
+    }
+}
