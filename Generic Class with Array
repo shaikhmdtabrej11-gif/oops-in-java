@@ -1,0 +1,22 @@
+class ArrayBox<T> {
+    T[] data;
+
+    ArrayBox(T[] data) {
+        this.data = data;
+    }
+
+    void display() {
+        for (T item : data) {
+            System.out.println(item);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Integer[] numbers = {10, 20, 30};
+
+        ArrayBox<Integer> box = new ArrayBox<>(numbers);
+        box.display();
+    }
+}
