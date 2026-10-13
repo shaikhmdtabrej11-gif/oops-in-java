@@ -1,0 +1,126 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+    // 1. Reverse a String
+    static String reverse(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        return sb.reverse().toString();
+    }
+
+    // 2. Check palindrome
+    static boolean isPalindrome(String s) {
+        return s.equalsIgnoreCase(reverse(s));
+    }
+
+    // 3. Count vowels
+    static int countVowels(String s) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = Character.toLowerCase(s.charAt(i));
+
+            if ("aeiou".indexOf(ch) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // 4. Count consonants
+    static int countConsonants(String s) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = Character.toLowerCase(s.charAt(i));
+
+            if (ch >= 'a' && ch <= 'z'
+                    && "aeiou".indexOf(ch) == -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // 5. Count a particular character
+    static int charFrequency(String s, char target) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == target) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // 6. Remove spaces
+    static String removeSpaces(String s) {
+        return s.replace(" ", "");
+    }
+
+    // 7. Convert to uppercase
+    static String toUpper(String s) {
+        return s.toUpperCase();
+    }
+
+    // 8. Compare two Strings
+    static boolean areEqual(String s1, String s2) {
+        return s1.equals(s2);
+    }
+
+    // 9. Count words
+    static int countWords(String s) {
+        String trimmed = s.trim();
+
+        if (trimmed.isEmpty()) {
+            return 0;
+        }
+
+        return trimmed.split("\\s+").length;
+    }
+
+    // 10. Remove duplicate characters
+    static String removeDuplicates(String s) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (result.indexOf(String.valueOf(ch)) == -1) {
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a String: ");
+        String s = sc.nextLine();
+
+        System.out.println("\n--- String Operations ---");
+        System.out.println("Original String: " + s);
+        System.out.println("Reverse: " + reverse(s));
+        System.out.println("Palindrome: " + isPalindrome(s));
+        System.out.println("Vowels: " + countVowels(s));
+        System.out.println("Consonants: " + countConsonants(s));
+        System.out.println("Spaces Removed: " + removeSpaces(s));
+        System.out.println("Uppercase: " + toUpper(s));
+        System.out.println("Word Count: " + countWords(s));
+        System.out.println("Without Duplicates: " + removeDuplicates(s));
+
+        System.out.print("\nEnter a character to count: ");
+        char target = sc.next().charAt(0);
+        System.out.println("Character Frequency: "
+                + charFrequency(s, target));
+
+        System.out.print("\nEnter another String to compare: ");
+        sc.nextLine(); // Consume the leftover newline
+        String s2 = sc.nextLine();
+
+        System.out.println("Strings Equal: " + areEqual(s, s2));
+
+        sc.close();
+    }
+}
